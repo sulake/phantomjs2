@@ -1,9 +1,10 @@
 {
   "name": "phantomjs2-centos7",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [
     "phantomjs",
     "phantomjs2",
+    "centos7",
     "headless",
     "webkit"
   ],
