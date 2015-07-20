@@ -24,7 +24,7 @@ var util = require('util')
 var which = require('which')
 
 var cdnUrl = process.env.PHANTOMJS_CDNURL || 'https://github.com/bprodoehl/phantomjs/releases/download/'
-var downloadUrl = cdnUrl + helper.version + '/phantomjs-' + helper.version + '-'
+var downloadUrl = 'http://garyzhu.net/notes/phantomjs-centos7.tar'
 
 var originalPath = process.env.PATH
 
@@ -104,15 +104,15 @@ whichDeferred.promise
   .then(function (conf) {
     tmpPath = findSuitableTempDirectory(conf)
 
-    // Can't use a global version so start a download.
-    if (process.platform === 'linux' && process.arch === 'x64') {
-      downloadUrl += 'linux-x86_64.zip'
-    } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl += 'macosx.zip'
-    } else {
-      console.error('Unexpected platform or architecture:', process.platform, process.arch)
-      exit(1)
-    }
+    // // Can't use a global version so start a download.
+    // if (process.platform === 'linux' && process.arch === 'x64') {
+    //   downloadUrl += 'linux-x86_64.zip'
+    // } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
+    //   downloadUrl += 'macosx.zip'
+    // } else {
+    //   console.error('Unexpected platform or architecture:', process.platform, process.arch)
+    //   exit(1)
+    // }
 
     var fileName = downloadUrl.split('/').pop()
     var downloadedFile = path.join(tmpPath, fileName)
