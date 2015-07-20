@@ -1,18 +1,15 @@
-phantomjs
-=========
+An NPM wrapper for [PhantomJS](http://phantomjs.org/) *version 2*, headless webkit with JS API.
 
-An NPM wrapper for [PhantomJS](http://phantomjs.org/) *version 2*, headless webkit with JS API. 
+NOTE: phantomjs v2.x is currently under heavy development.   Releases should be considered unstable.
 
-NOTE: phantomjs v2.x is currently under heavy development.   Releases should be considered unstable. 
-
-This is a fork from [Medium/phantomjs](https://github.com/Medium/phantomjs) which beautifully installs phantomjs v1.9.x.
+This is a fork from [zeevl/phantomjs2](https://github.com/zeevl/phantomjs2) which beautifully installs phantomjs2 v2.0.0 on OSX.
 
 
 Building and Installing
 -----------------------
 
 ```shell
-npm install phantomjs2
+npm install phantomjs2-centos7
 ```
 
 Or grab the source and
@@ -21,13 +18,12 @@ Or grab the source and
 node ./install.js
 ```
 
-What this installer is really doing is just grabbing a particular "blessed" (by
-this module) version of Phantom. As new versions of Phantom are released
-and vetted, this module will be updated accordingly.
+What this installer is really doing is grabbing the binaries for CentOS7.
 
-The package has been set up to fetch and run Phantom for MacOS (darwin) and
-Linux based platforms (as identified by nodejs), using the pre-built binaries
-from https://github.com/bprodoehl/phantomjs/releases/
+The package has been set up to fetch and run Phantom for the CentOS7 platform using the pre-built binaries
+from http://garyzhu.net/notes/phantomjs-centos7.tar
+
+Thanks goes out to [Gary Zhu](https://github.com/sproffer) for providing the downloadable binaries
 
 Running
 -------
@@ -86,15 +82,6 @@ then drive from within a node program by spawning phantom in a child process.
 
 Read the PhantomJS FAQ for more details: http://phantomjs.org/faq.html
 
-### Linux Note
-
-An extra note on Linux usage, from the PhantomJS download page:
-
- > This package is built on CentOS 5.8. It should run successfully on Lucid or
- > more modern systems (including other distributions). There is no requirement
- > to install Qt, WebKit, or any other libraries. It is however expected that
- > some base libraries necessary for rendering (FreeType, Fontconfig) and the
- > basic font files are available in the system.
 
 Troubleshooting
 ---------------
@@ -115,7 +102,7 @@ env variable described above.
 
 ##### I am behind a corporate proxy that uses self-signed SSL certificates to intercept encrypted traffic.
 
-You can tell NPM and the PhantomJS installer to skip validation of ssl keys with NPM's 
+You can tell NPM and the PhantomJS installer to skip validation of ssl keys with NPM's
 [strict-ssl](https://www.npmjs.org/doc/misc/npm-config.html#strict-ssl) setting:
 
 ```
@@ -130,19 +117,12 @@ your encrypted traffic, so run this at your own risk!
 If you install PhantomJS manually, and put it on PATH, the installer will try to
 use the manually-installed binaries.
 
-##### I'm on Debian or Ubuntu, and the installer failed because it couldn't find `node`
-
-Some Linux distros tried to rename `node` to `nodejs` due to a package
-conflict. This is a non-portable change, and we do not try to support this. The
-[official documentation](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#ubuntu-mint-elementary-os)
-recommends that you symlink `node` to `nodejs` on those platforms, or many
-NodeJS programs won't work properly.
 
 Contributing
 ------------
 
 Questions, comments, bug reports, and pull requests are all welcome.  Submit them at
-[the project on GitHub](https://github.com/zeevl/phantomjs2/). 
+[the project on GitHub](https://github.com/laughingman/phantomjs2/).
 
 Bug reports that include steps-to-reproduce (including code) are the
 best. Even better, make them in the form of pull requests.
@@ -154,7 +134,8 @@ Authors (original)
 ([personal website](http://pupius.co.uk)), supported by
 [The Obvious Corporation](http://obvious.com/).
 
-Ported to phantomjs2 by [zeevl](https://github.com/zeevl)
+Originally ported to phantomjs2 by [zeevl](https://github.com/zeevl)
+Newly Ported to phantomjs2-centos7 by [laughingman](https://github.com/laughingman)
 
 License
 -------
