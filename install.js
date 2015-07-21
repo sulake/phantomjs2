@@ -23,7 +23,7 @@ var url = require('url')
 var util = require('util')
 var which = require('which')
 
-var cdnUrl = process.env.PHANTOMJS_CDNURL || 'https://github.com/laughingMan/phantomjs/releases/download/'
+var cdnUrl = process.env.PHANTOMJS_CDNURL || 'https://github.com/laughingMan/phantomjs2/releases/download/'
 var downloadUrl = cdnUrl + helper.version + '/phantomjs-' + helper.version + '-'
 
 var originalPath = process.env.PATH
